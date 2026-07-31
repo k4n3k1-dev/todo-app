@@ -1,14 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import { isOverdue } from '@/lib/overdue';
 
 const STATUSES = ['todo', 'in-progress', 'complete'];
-
-function isOverdue(task) {
-  if (task.archived || task.status === 'complete' || !task.due_date) return false;
-  const today = new Date().toISOString().split('T')[0];
-  return task.due_date < today;
-}
 
 export default function TaskList({ tasks, sortBy, onSortChange, onTaskUpdated }) {
   const [editingId, setEditingId] = useState(null);

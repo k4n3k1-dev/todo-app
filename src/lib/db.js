@@ -1,14 +1,14 @@
 import Database from 'better-sqlite3';
 import path from 'path';
 
-// The database file will live at the project root as todo.db
-const dbPath = path.join(process.cwd(), 'todo.db');
+// Use a separate database file when running tests, so tests never
+// touch (or wipe) the real data the app uses during normal use.
+const dbPath = process.env.NODE_ENV === 'test'
+  ? path.join(process.cwd(), 'test.db')
+  : path.join(process.cwd(), 'todo.db');
 
 const db = new Database(dbPath);
 
-// Create the tasks table if it doesn't already exist.
-// This runs every time the app starts, but CREATE TABLE IF NOT EXISTS
-// makes it safe to run repeatedly without wiping existing data.
 db.exec(`
   CREATE TABLE IF NOT EXISTS tasks (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
