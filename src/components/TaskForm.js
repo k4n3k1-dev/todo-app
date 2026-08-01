@@ -45,7 +45,7 @@ export default function TaskForm({ onTaskCreated }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mb-8 p-4 border rounded-lg space-y-3">
+    <form onSubmit={handleSubmit} className="mb-8 p-4 border-2 border-teal-700 rounded-lg space-y-3">
       <h2 className="text-lg font-semibold">Add a task</h2>
 
       {error && <p className="text-red-600 text-sm">{error}</p>}

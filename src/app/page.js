@@ -60,7 +60,7 @@ export default function Home() {
       <div className="mt-8">
         <button
           onClick={() => setShowArchived((prev) => !prev)}
-          className="text-sm text-gray-600 underline"
+          className="text-sm text-teal-700 underline"
         >
           {showArchived ? 'Hide' : 'Show'} archived tasks ({archivedTasks.length})
         </button>
@@ -68,11 +68,11 @@ export default function Home() {
         {showArchived && (
           <ul className="mt-3 space-y-1">
             {archivedTasks.map((task) => (
-              <li key={task.id} className="text-sm text-gray-300 flex items-center gap-2">
+              <li key={task.id} className="text-sm text-teal-900 flex items-center gap-2">
                 <span>{task.title} — {task.topic} (archived)</span>
                 <button
                   onClick={() => handleUnarchive(task.id)}
-                  className="text-xs underline hover:text-white"
+                  className="text-xs underline hover:text-black"
                 >
                   Unarchive
                 </button>

@@ -30,7 +30,7 @@ export default function TaskList({ tasks, sortBy, onSortChange, onTaskUpdated })
   return (
     <table className="w-full border-collapse">
       <thead>
-        <tr className="border-b text-left">
+        <tr className="border-b-2 border-teal-700 text-left">
           <th className="p-2 cursor-pointer" onClick={() => handleSort('topic')}>
             Topic {sortBy === 'topic' && '↓'}
           </th>
@@ -49,7 +49,7 @@ export default function TaskList({ tasks, sortBy, onSortChange, onTaskUpdated })
         {activeTasks.map((task) => (
           <tr
             key={task.id}
-            className={`border-b ${isOverdue(task) ? 'bg-red-100 text-black' : ''}`}
+            className={`border-b border-teal-700 ${isOverdue(task) ? 'bg-red-100 text-black' : ''}`}
           >
             <td className="p-2">{task.topic}</td>
             <td className="p-2">{task.title}</td>
@@ -74,7 +74,7 @@ export default function TaskList({ tasks, sortBy, onSortChange, onTaskUpdated })
             <td className="p-2">
               <button
                 onClick={() => updateTask(task.id, { archived: 1 })}
-                className="text-sm text-gray-600 hover:text-black underline"
+                className="text-sm text-teal-700 hover:text-black underline"
               >
                 Archive
               </button>
