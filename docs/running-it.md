@@ -28,3 +28,7 @@ npm test
 \```
 
 This runs the full test suite once (via `vitest run`) against a separate throwaway database, and exits with a pass/fail result. It does not affect the real `todo.db` used by the running application.
+
+---
+
+*AI Declaration: The preceding document was reviewed and edited with: Claude-Web[Claude Sonnet 5]*

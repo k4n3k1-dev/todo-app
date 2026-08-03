@@ -24,3 +24,7 @@ The application uses a single SQLite database file (`todo.db`), containing one t
 - **Overdue status is derived, not stored.** There is no `overdue` column. A task is considered overdue at read time if all of the following are true: `archived = 0`, `status != 'complete'`, and `due_date` is earlier than the current date. This logic lives in `src/lib/overdue.js` and is shared by both the UI (`TaskList.js`) and the test suite, so the two can never disagree with each other.
 
 - **Status is application-enforced, not database-enforced.** SQLite has no native enum type, so the three valid status values (`todo`, `in-progress`, `complete`) are validated in the API route (`src/app/api/tasks/[id]/route.js`) rather than as a database constraint.
+
+---
+
+*AI Declaration: The preceding document was reviewed and edited with: Claude-Web[Claude Sonnet 5]*

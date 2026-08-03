@@ -12,3 +12,7 @@
 - **eslint** / **eslint-config-next** — linting, installed by default via `create-next-app` to catch code issues early.
 - **vitest** — the test runner. Chosen for a simpler, more readable testing setup rather than relying on Node's built-in test module, and to gain experience with a dedicated testing framework.
 - **@vitejs/plugin-react** — allows Vitest to parse JSX, included for compatibility even though the current test suite tests plain JavaScript logic rather than React components directly.
+
+---
+
+*AI Declaration: The preceding document was reviewed and edited with: Claude-Web[Claude Sonnet 5]*
